@@ -43,7 +43,7 @@
             margin-bottom: 20px;
         }
 
-        .download-btn {
+        .contact-btn {
             background: #00ffff;
             color: #000;
             padding: 15px 30px;
@@ -53,14 +53,6 @@
             transition: background 0.3s, transform 0.2s;
             display: inline-block;
             margin-top: 20px;
-            opacity: 0; /* Start hidden */
-            transform: translateY(20px); /* Start slightly down */
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        .download-btn.visible {
-            opacity: 1; /* Fade in */
-            transform: translateY(0); /* Move to original position */
         }
 
         section {
@@ -70,43 +62,6 @@
             background: rgba(44, 44, 44, 0.8);
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            opacity: 0; /* Start hidden */
-            transform: translateY(20px); /* Start slightly down */
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        section.visible {
-            opacity: 1; /* Fade in */
-            transform: translateY(0); /* Move to original position */
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-
-        .feature {
-            background: rgba(68, 68, 68, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-            opacity: 0; /* Start hidden */
-            transform: translateY(20px); /* Start slightly down */
-            transition: opacity 0.5s, transform 0.5s;
-        }
-
-        .feature.visible {
-            opacity: 1; /* Fade in */
-            transform: translateY(0); /* Move to original position */
-        }
-
-        .feature:hover {
-            transform: scale(1.05);
         }
 
         footer {
@@ -126,7 +81,7 @@
     <header>
         <h1>Exampleware SS Private</h1>
         <p>The Best Roblox SS</p>
-        <a href="#" class="download-btn" id="downloadBtn">Contact</a>
+        <a href="contact.html" class="contact-btn">Contact</a>
     </header>
 
     <section id="features">
@@ -142,35 +97,5 @@
     <footer>
         <p>&copy; 2024 Exampleware. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // Fade in download button and features on scroll
-        const downloadButton = document.getElementById('downloadBtn');
-        const features = document.getElementById('features');
-        const featureElements = document.querySelectorAll('.feature');
-
-        window.addEventListener('scroll', function() {
-            const scrollPosition = window.scrollY;
-
-            // Show download button
-            if (scrollPosition > 50) {
-                downloadButton.classList.add('visible');
-            }
-
-            // Show features section
-            if (scrollPosition > features.offsetTop - window.innerHeight + 100) {
-                features.classList.add('visible');
-
-                // Fade in each feature individually
-                featureElements.forEach((feature, index) => {
-                    setTimeout(() => {
-                        feature.classList.add('visible');
-                    }, index * 200); // Add delay for each feature
-                });
-            }
-        });
-
-        console.log("Exampleware loaded successfully!");
-    </script>
 </body>
 </html>
