@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Exampleware</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #111;
+            color: #ffffff;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .username-box {
+            background: rgba(68, 68, 68, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .username {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #00ffff;
+        }
+
+        .copy-btn {
+            background: #00ffff;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #00cccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: #ffffff;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="username-box">
+        <div class="username" id="discordUsername">totallynotsomealt</div>
+        <button class="copy-btn" id="copyBtn">Copy Username</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Exampleware. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Copy Discord username to clipboard
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const username = document.getElementById('discordUsername').innerText;
+            navigator.clipboard.writeText(username).then(() => {
+                alert("Discord username copied to clipboard!"); // Simple alert for confirmation
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        });
+    </script>
+</body>
+</html>
